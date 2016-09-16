@@ -7,6 +7,8 @@
   <%= @post.tags %>
 </p>
 
-<%= simple_format @post.body %>
+<div class="post">
+  <%= simple_format @post.body %>
+</div>
 
 <%= link_to "Back", posts_path %>

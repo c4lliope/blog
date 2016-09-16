@@ -1,0 +1,10 @@
+.post {
+  @include span-columns(6 of 12);
+  clear: both;
+  margin-bottom: $base-spacing;
+
+  &-title {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+}
