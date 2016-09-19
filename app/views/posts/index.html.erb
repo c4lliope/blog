@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
-
 <% @posts.each do |post| %>
   <div class="post">
     <%= link_to post.title, post, class: "post-title" %>
+    <div class="post-date"><%= l(post.created_at) %></div>
     <%= simple_format post.body.truncate(300) %>
   </div>
 <% end %>

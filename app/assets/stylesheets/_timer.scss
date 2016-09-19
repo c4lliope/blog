@@ -1,0 +1,31 @@
+.timer,
+.timer-explanation {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.timer-explanation {
+  @include fill-parent;
+  font-size: 2em;
+}
+
+.timer {
+  font-size: 4em;
+  line-height: 1;
+  margin-bottom: $small-spacing;
+  overflow: hidden;
+}
+
+.timer-count {
+  @include span-columns(2 of 6);
+  text-align: right;
+}
+
+.timer-label {
+  @include span-columns(4 of 6);
+  @include omega;
+  color: $medium-gray;
+}
+
+.right-aligned {
+  text-align: right;
+}

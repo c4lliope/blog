@@ -14,3 +14,40 @@
 //= require jquery_ujs
 
 //= require_tree .
+
+function getTimeRemaining(endtime){
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor( (t/1000) % 60 );
+  var minutes = Math.floor( (t/1000/60) % 60 );
+  var hours = Math.floor( (t/(1000*60*60)) % 24 );
+  var days = Math.floor( t/(1000*60*60*24) );
+
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+function startTimer(expiration, display) {
+  function timer() {
+    var remaining = getTimeRemaining(expiration);
+
+    document.querySelector(".timer-count-days").textContent = remaining.days;
+    document.querySelector(".timer-count-hours").textContent = remaining.hours;
+    document.querySelector(".timer-count-minutes").textContent = remaining.minutes;
+    document.querySelector(".timer-count-seconds").textContent = remaining.seconds;
+  };
+
+  // we don't want to wait a full second before the timer starts
+  timer();
+  setInterval(timer, 1000);
+}
+
+window.onload = function () {
+  var expiration = new Date($(".timer").data("expiration"));
+  var display = document.querySelector('.timer');
+  startTimer(expiration, display);
+};

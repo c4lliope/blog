@@ -1,3 +1,8 @@
 .content {
   @include outer-container;
 }
+
+.left-column,
+.right-column {
+  @include span-columns(6 of 12);
+}

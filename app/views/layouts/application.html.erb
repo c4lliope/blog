@@ -11,13 +11,20 @@
   %>
   <title><%= title %></title>
   <%= stylesheet_link_tag :application, media: "all" %>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
   <%= render "flashes" -%>
 
   <div class="content">
-    <%= yield %>
+    <div class="left-column">
+      <%= render "application/timer" %>
+    </div>
+
+    <div class="right-column">
+      <%= yield %>
+    </div>
   </div>
 
   <%= render "javascript" %>
