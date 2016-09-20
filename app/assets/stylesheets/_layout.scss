@@ -1,8 +1,13 @@
 .content {
   @include outer-container;
+  padding: $base-spacing 0;
 }
 
 .left-column,
 .right-column {
-  @include span-columns(6 of 12);
+  @include span-columns(5.5 of 12);
+}
+
+.right-column {
+  @include shift(1);
 }
