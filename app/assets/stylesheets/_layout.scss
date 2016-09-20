@@ -8,7 +8,7 @@
   padding: $base-spacing;
 }
 
-@include media($medium-screen) {
+@include media($large-screen) {
   .left-column,
   .right-column {
     @include span-columns(5.5 of 12);
