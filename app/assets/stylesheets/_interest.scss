@@ -1,0 +1,18 @@
+.interest {
+  margin-top: $base-spacing;
+}
+
+.new_interest {
+  display: flex;
+  align-items: stretch;
+
+  .btn {
+    flex: 0 0 auto;
+    margin-bottom: $small-spacing;
+  }
+
+  .email {
+    flex: 1 0 auto;
+    margin-right: $small-spacing;
+  }
+}

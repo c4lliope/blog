@@ -1,0 +1,14 @@
+<div class="interest">
+  <h2>Want a self-destructing blog of your own?</h2>
+
+  <p>
+  Let me know.
+  If enough people want a blog of their own like this,
+  I'll turn it into something that anyone can use.
+  </p>
+
+  <%= simple_form_for(@interest || Interest.new) do |form| %>
+    <%= form.input :email, label: false, placeholder: "Email" %>
+    <%= form.button :submit %>
+  <% end %>
+</div>

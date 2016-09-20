@@ -6,6 +6,16 @@ en:
       with_weekday:
         "%a %m/%d/%y"
 
+  helpers:
+    submit:
+      interest:
+        create: I'll take one, please.
+
+  interest:
+    create:
+      success: Thanks for your interest! I'll send you an email if there are any updates.
+      failure: Damn, that didn't work. Try again?
+
   time:
     formats:
       default:
