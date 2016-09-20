@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actioncable (5.0.0.1)
       actionpack (= 5.0.0.1)
@@ -169,6 +170,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 5.0.0.1)
       sprockets-rails (>= 2.0.0)
+    rails-assets-bowser (1.4.5)
     rails-dom-testing (2.0.1)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6.0)
@@ -303,6 +305,7 @@ DEPENDENCIES
   rack-mini-profiler
   rack-timeout
   rails (~> 5.0.0)
+  rails-assets-bowser!
   rails_stdout_logging
   recipient_interceptor
   redcarpet
