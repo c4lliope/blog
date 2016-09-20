@@ -22,7 +22,7 @@
 .timer-label {
   @include span-columns(4 of 6);
   @include omega;
-  color: $medium-gray;
+  color: $action-color;
 }
 
 .right-aligned {

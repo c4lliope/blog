@@ -1,20 +1,33 @@
+body {
+  height: 100%;
+}
+
 .content {
-  @include outer-container;
-  padding: $base-spacing 0;
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100%;
 }
 
 .left-column,
 .right-column {
   padding: $base-spacing;
+  flex: 0 0 100%;
+}
+
+.left-column {
+  background-color: $dark-blue;
+  color: $white;
+}
+
+.right-column {
+  background-color: $white;
+  color: $dark-gray;
 }
 
 @include media($large-screen) {
   .left-column,
   .right-column {
-    @include span-columns(5.5 of 12);
-  }
-
-  .right-column {
-    @include shift(1);
+    flex: 0 0 50%;
   }
 }
