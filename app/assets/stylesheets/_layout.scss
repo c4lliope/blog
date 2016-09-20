@@ -5,9 +5,16 @@
 
 .left-column,
 .right-column {
-  @include span-columns(5.5 of 12);
+  padding: $base-spacing;
 }
 
-.right-column {
-  @include shift(1);
+@include media($medium-screen) {
+  .left-column,
+  .right-column {
+    @include span-columns(5.5 of 12);
+  }
+
+  .right-column {
+    @include shift(1);
+  }
 }
