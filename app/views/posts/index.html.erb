@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
   <div class="post">
-    <%= link_to post.title, post, class: "post-title" %>
+    <%= link_to post.title, "#{post_path(post)}#main-content", class: "post-title" %>
     <div class="post-date"><%= l(post.created_at) %></div>
     <%= markdown post.body.truncate(300) %>
   </div>
