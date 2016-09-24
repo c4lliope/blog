@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  include ApplicationHelper
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   http_basic_authenticate_with(
@@ -30,6 +31,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
+      SelfDestruct.new.delay(run_at: expiration_time).attempt
       redirect_to @post, notice: "Post was successfully created."
     else
       render :new
