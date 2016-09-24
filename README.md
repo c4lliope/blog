@@ -1,4 +1,4 @@
-# Pass
+# The Self-Destructing Blog
 
 ## Getting Started
 

@@ -1,5 +1,5 @@
 {
-  "name":"pass",
+  "name":"self_destructing_blog",
   "scripts":{},
   "env":{
     "APPLICATION_HOST":{

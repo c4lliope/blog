@@ -10,10 +10,10 @@ if [ -z "$1" ]; then
 fi
 
 heroku pg:backups restore \
-  `heroku pg:backups public-url -a pass-staging` \
+  `heroku pg:backups public-url -a self_destructing_blog-staging` \
   DATABASE_URL \
-  --confirm pass-staging-pr-$1 \
-  --app pass-staging-pr-$1
-heroku run rake db:migrate --exit-code --app pass-staging-pr-$1
-heroku ps:scale worker=1 --app pass-staging-pr-$1
-heroku restart --app pass-staging-pr-$1
+  --confirm self_destructing_blog-staging-pr-$1 \
+  --app self_destructing_blog-staging-pr-$1
+heroku run rake db:migrate --exit-code --app self_destructing_blog-staging-pr-$1
+heroku ps:scale worker=1 --app self_destructing_blog-staging-pr-$1
+heroku restart --app self_destructing_blog-staging-pr-$1
