@@ -7,6 +7,14 @@ Rails.application.load_tasks
 task(:default).clear
 task default: [:spec]
 
+task ensure_self_destruct_is_scheduled: [:environment] do
+  include ApplicationHelper
+
+  if Post.any? && Delayed::Job.none? { |job| job.handler =~ /SelfDestruct/ }
+    SelfDestruct.new.delay(run_at: expiration_time).attempt
+  end
+end
+
 if defined? RSpec
   task(:spec).clear
   RSpec::Core::RakeTask.new(:spec) do |t|
